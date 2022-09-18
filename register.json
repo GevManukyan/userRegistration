@@ -1,0 +1,44 @@
+{
+  "people": [
+    {
+      "fname": "Gev",
+      "lname": "Manukyan",
+      "age": "22",
+      "email": "gevmanukyan110@gmail.com",
+      "password": "gev123",
+      "id": "id48232923486096376"
+    },
+    {
+      "fname": "Aram",
+      "lname": "Aramyan",
+      "age": "25",
+      "email": "aramaramyan@gmail.com",
+      "password": "aram123",
+      "id": "id97735603612316930"
+    },
+    {
+      "fname": "",
+      "lname": "",
+      "age": "",
+      "email": "",
+      "password": "",
+      "id": "id99856298060466540"
+    },
+    {
+      "fname": "Gev",
+      "lname": "Manukyan",
+      "age": "22",
+      "email": "gevmanukyan110@gmail.com",
+      "password": "gevmanukyan",
+      "id": "id96825659736089500"
+    },
+    {
+      "fname": "Gev",
+      "lname": "Manukyan",
+      "age": "861",
+      "email": "gevmanukyan110@gmail.com",
+      "password": "",
+      "id": "id49033734508300130"
+    }
+  ]
+}

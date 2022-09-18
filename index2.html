@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style2.css">
+    <title>Document</title>
+</head>
+<body>
+     <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+
+    <div class="form1">
+        <h1>Login</h1>
+        <div >
+            <p>login or mail</p>
+            <input type="text" class="inpput1">
+        </div>
+        <div>
+            <P>Password</P>
+            <input type="password" class="inpput2">
+        </div>
+        <button class="button1"> Login</button>
+        <a href="index.html" style="color: wheat;text-decoration: none;"><p>Or Sign Up Using</p></a>
+    </div>
+
+
+
+
+    <script >
+        let contanier = document.querySelector(".form1")
+        let btn2 = document.querySelector(".button1")
+        let input1 = document.querySelector(".inpput1")
+        let input2 = document.querySelector(".inpput2")
+        btn2.addEventListener("click",function(){
+           
+       async function getRes(url){
+           let res = await fetch(`${url}`);
+           if(!res.ok){
+               throw new Error(`could not fetch ${url},status:${res.status}`)
+           }
+         return await res.json()
+       }
+       getRes(`http://localhost:3000/people`)
+           .then(data => data.filter(function(data){
+                if(data.email===input1.value && data.password === input2.value){
+                    user(data)
+                }else{
+                    input1.style.border = "2px solid red"
+                    input2.style.border = "2px solid red"
+                }
+               
+           })).catch(err=>console.error(err))
+     
+ 
+})
+
+function user(a){
+   contanier.remove()
+    let div1 = document.createElement("div")
+   document.body.append(div1)
+    div1.classList.add("big")
+    let div1_1 = document.createElement("div")
+    div1.append(div1_1)
+    div1_1.classList.add("div1")
+    let img = document.createElement("img")
+     div1_1.append(img)
+    img.classList.add("img")
+    img.src ="https://static.vecteezy.com/system/resources/thumbnails/000/439/863/small/Basic_Ui__28186_29.jpg"
+    let div1_2 = document.createElement("div")
+    div1.append(div1_2)
+    div1_2.classList.add("div2")
+    let h1 = document.createElement("h1")
+    div1_2.append(h1)
+    h1.innerText = `${a.fname} ${a.lname}`
+    h1.classList.add("LnameFname")
+    let age = document.createElement("h2")
+    div1_2.append(age)
+    age.innerText = ` Age: ${a.age} `
+    age.classList.add("age" )
+    let id = document.createElement("p")
+    div1_2.append(id)
+    id.innerText = ` id: ${a.id} `
+    id.classList.add("id")
+    let mail = document.createElement("p")
+    div1_2.append(mail)
+    mail.innerText = ` mail: ${a.email} `
+    id.classList.add("mail")
+    let close = document.createElement("a")
+    document.body.append(close)
+    close.innerText = "Close"
+    close.href ="index2.html"
+    close.classList.add("close")
+}
+
+    </script>
+</body>
+</html>
